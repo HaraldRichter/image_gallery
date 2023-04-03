@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "431089727409",
+    "project_id": "bloc-picture-app",
+    "storage_bucket": "bloc-picture-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431089727409:android:a3db92d1a713fc43baaf90",
+        "android_client_info": {
+          "package_name": "hyenabyte.de.bloc_tutorial_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "431089727409-qa9v3m2j2mfbej1uqm66sng7b5lgfn0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCofJUPx9fspuRnZA7JNDw9A0d2BVvGHrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "431089727409-qa9v3m2j2mfbej1uqm66sng7b5lgfn0k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
