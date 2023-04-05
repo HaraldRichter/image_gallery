@@ -4,11 +4,13 @@ import 'package:flutter/foundation.dart' show immutable;
 // because you just want to have the events passed to the bloc and nothing else;
 // otherwise weird shit may happen, so it's important to keep the events immutable.
 
+/// First we create and abstract class "AppEvent":
 @immutable
 abstract class AppEvent {
   const AppEvent();
 }
 
+/// Then we create the individual events as implementations of AppEvent:
 @immutable
 class AppEventInitialize implements AppEvent {
   // Bloc HAS to have an initializer!

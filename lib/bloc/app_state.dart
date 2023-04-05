@@ -4,6 +4,8 @@ import 'package:flutter/foundation.dart' show immutable;
 
 import '../auth/auth_errors.dart';
 
+/// Superclass:
+
 @immutable
 abstract class AppState {
   final bool isLoading;
@@ -18,9 +20,11 @@ abstract class AppState {
 
   const AppState({
     required this.isLoading,
-    required this.authError,
+    this.authError,
   });
 }
+
+/// Subclasses for individual states:
 
 @immutable
 class AppStateLoggedIn extends AppState {
@@ -31,7 +35,7 @@ class AppStateLoggedIn extends AppState {
     required bool isLoading,
     required this.user,
     required this.images,
-    required AuthError? authError,
+    AuthError? authError,
   }) : super(
           isLoading: isLoading,
           authError: authError,
@@ -54,7 +58,7 @@ class AppStateLoggedIn extends AppState {
   }
 
   @override
-  // TODO: Nachschauen, was zur Hölle es damit auf sich hat
+  // TODO: Nachschauen, was zur Hölle es mit diesem Hash-Gedöns auf sich hat
   int get hashCode => Object.hash(
         user.uid,
         images,
@@ -70,7 +74,7 @@ class AppStateLoggedIn extends AppState {
 class AppStateLoggedOut extends AppState {
   const AppStateLoggedOut({
     required bool isLoading,
-    required AuthError? authError,
+    AuthError? authError,
   }) : super(
           isLoading: isLoading,
           authError: authError,
@@ -85,7 +89,7 @@ class AppStateLoggedOut extends AppState {
 class AppStateIsInRegistrationView extends AppState {
   const AppStateIsInRegistrationView({
     required bool isLoading,
-    required AuthError? authError,
+    AuthError? authError,
   }) : super(
           isLoading: isLoading,
           authError: authError,
@@ -95,7 +99,9 @@ class AppStateIsInRegistrationView extends AppState {
 /// Following some helpers:
 
 extension GetUser on AppState {
-  // This helper-class enables us to get the user-data from any AppState.
+  // This extension enables us to get the user-data from any AppState.
+  // We need this so we can pass the user-ID to functions like "upload Image"
+  // and others that need this info.
   User? get user {
     final cls = this;
     if (cls is AppStateLoggedIn) {

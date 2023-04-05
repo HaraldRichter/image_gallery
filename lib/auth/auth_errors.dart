@@ -1,9 +1,8 @@
 import 'package:flutter/foundation.dart' show immutable;
 import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuthException;
 
-/// Unser Ziel ist es, mit dem Bloc nicht unmittelbar die Fehlermeldungen von
-/// Firestore zu reproduzieren, sondern diese in lokale Fehlermeldungen "umzuwandeln",
-/// mit denen dann unser Bloc arbeiten kann.
+/// Our goal with this is not to display the error messages from Firebass directly,
+/// but "transform" them into local error messages with which our Bloc can work.
 /// An overview of possible Firebase Authentication Errors is available at:
 /// https://firebase.google.com/docs/auth/admin/errors
 
